@@ -2,7 +2,7 @@ services:
   - type: web
     name: pdfvert
     env: python
-    plan: starter
+    plan: free
     buildCommand: pip install -r requirements.txt
     startCommand: gunicorn app:app
     envVars:
