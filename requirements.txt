@@ -1,0 +1,12 @@
+Flask
+gunicorn
+PyPDF2
+Pillow
+moviepy
+imageio
+imageio-ffmpeg
+python-dotenv
+pikepdf
+rembg
+python-docx
+reportlab
