@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block content %}
+<h1 style="text-align:center;margin-top:12px;">PDFvert — Free Online Tools</h1>
+<div class="tool-grid">
+{% for slug, cfg in tools.items() %}
+  <a class="tool-box" href="{{ url_for('tool', slug=slug) }}">{{ cfg.title }}</a>
+{% endfor %}
+</div>
+<p style="text-align:center;margin-top:12px;"><a href="{{ url_for('how_to_use') }}">How to Use</a></p>
+{% endblock %}

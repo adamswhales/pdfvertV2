@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>PDFvert - Free Converters</title>
+<link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+{% if config.ADS_ENABLED %}
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client={{ config.ADSENSE_CLIENT }}" crossorigin="anonymous"></script>
+{% endif %}
+</head>
+<body>
+<header>
+  <a href="/"><img src="{{ url_for('static', filename='logo.png') }}" style="height:34px;vertical-align:middle;"> <strong>PDFvert</strong></a>
+</header>
+
+{% if config.ADS_ENABLED %}
+<div class="ad-slot">
+  <ins class="adsbygoogle" style="display:block" data-ad-client="{{ config.ADSENSE_CLIENT }}" data-ad-slot="{{ config.ADSENSE_SLOT_TOP }}" data-ad-format="auto"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+{% endif %}
+
+<main>{% block content %}{% endblock %}</main>
+
+{% if config.ADS_ENABLED %}
+<div class="ad-slot">
+  <ins class="adsbygoogle" style="display:block" data-ad-client="{{ config.ADSENSE_CLIENT }}" data-ad-slot="{{ config.ADSENSE_SLOT_BOTTOM }}" data-ad-format="auto"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+{% endif %}
+
+<footer><p>&copy; 2025 PDFvert</p></footer>
+</body>
+</html>

@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>{{ tool_name }}</h2>
+<p style="opacity:.9">{{ desc }}</p>
+<form id="toolForm" method="post" enctype="multipart/form-data">
+  {% if multiple %}
+    <input type="file" name="files" multiple required>
+  {% else %}
+    <input type="file" name="file" required>
+  {% endif %}
+  <button type="submit">Convert</button>
+</form>
+
+<div class="modal" id="interModal">
+  <div class="content">
+    <h3>Processing your file…</h3>
+    <p>Please wait while we convert your file.</p>
+  </div>
+</div>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+{% endblock %}
